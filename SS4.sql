@@ -39,7 +39,6 @@ CREATE TABLE Score (
     course_id INT,
     midterm_score DECIMAL(4,2) CHECK (midterm_score BETWEEN 0 AND 10),
     final_score DECIMAL(4,2) CHECK (final_score BETWEEN 0 AND 10),
-    -- Mỗi sinh viên chỉ có một kết quả cho mỗi khóa học
     UNIQUE(student_id, course_id),
     FOREIGN KEY (student_id) REFERENCES Student(student_id),
     FOREIGN KEY (course_id) REFERENCES Course(course_id)
